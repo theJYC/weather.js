@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cityName {
+    font-size: 26px;
+}
+
+.temperature {
+    font-size: 13px;
+}
+
+#weatherbox {
+    margin-top: 50px
+}
