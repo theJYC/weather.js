@@ -1,78 +1,95 @@
-/*selfhosting a couple of fonts a) b) */
 
-/*a) this is for the location title: */
-
-/* inconsolata-regular font */
-@font-face {
-  font-family: 'Inconsolata';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/inconsolata-v21-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('fonts/inconsolata-v21-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('fonts/inconsolata-v21-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('fonts/inconsolata-v21-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('fonts/inconsolata-v21-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('fonts/inconsolata-v21-latin-regular.svg#Inconsolata') format('svg'); /* Legacy iOS */
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #FAF7EF;
+    font-family: Arial;
+    color: #575555;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3rem;
+    font-family: Arial;
 }
 
-/*b) this is for the weather detail text: */
-
-/* lato-regular - latin */
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/lato-v17-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local(''),
-       url('fonts/lato-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('fonts/lato-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('fonts/lato-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('fonts/lato-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('fonts/lato-v17-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
+header {
+    display: flex;
+    justify-content: center;
 }
 
 #container {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    font-family: Inconsolata;
+}
 
+#pin {
+    font-weight: normal;
+    font-size: 1.5rem;
+    padding-top: .14rem;
+    outline: none;
+    margin-right: 0.25rem;
 }
 
 .locationTitle {
-    font-size: 26px;
-    font-family: Inconsolata;
+    font-size: 3.5rem;
+    margin-top: 1.5rem;
 }
 
 .temperature {
     font-size: 15px;
-    font-family: Lato;
 }
 
 .weather {
     font-size: 20px;
-    font-family: Lato;
 }
 
-#weatherbox {
-    margin-top: 50px;
-}
-
-form {
+.weatherContainer {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
+    width: 40rem;
+    height: 425.5px;
+    background-color: #e6e7eb;
+    border-radius: 0.75rem;
+    border: solid #827f7f;
+    box-shadow: 0 0 15px 4px rgb(0 0 0 / 15%);
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+img {
+    height: 70px;
+    width: 70px;
 }
 
 #searchText {
-    width: 115px;
-    font-family: Inconsolata;
-
+    font-size: 1.5rem;
+    width: 160px;
+    outline: none;
 }
 
 #search {
-    width: 55px;
-    font-family: Inconsolata;
-
+    width: 40px;
+    background-color: #d3d6e3;
+    border: 1.5px solid #4f4f4f;
+    border-radius: 0.35rem;
+    font-weight: normal;
+    color: #575555;
+    font-size: 1.3rem;
+    padding-top: .14rem;
+    padding-bottom: .1rem;
+    outline: none;
 }
+
+#search:hover {
+    background-color: #caccd9;
+    outline: none;
+}
+
+#search:active {
+    background-color: #bbbdc9;
+    outline: none;
+}
+

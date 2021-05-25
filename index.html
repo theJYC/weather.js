@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>weather</title>
+    <title>clima.</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div id="container">
 
+    <!-- header to contain location access icon, search bar, and c/f conversion (in that order) -->
+    <header>
+        <div id="pin">
+            📍
+        </div>
         <form>
             <input type="text" id="searchText" placeholder="city/location...">
-            <button type="submit" id="search">search</button>
+            <button type="submit" id="search">🔍</button>
         </form>
+    </header>
 
-        <div id="weatherbox">
+    <div id="container">
+        <div id="weatherdisplay">
         </div>
-
     </div>
     <script type="text/javascript" src="app.js"></script>
 </body>

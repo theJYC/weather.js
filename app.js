@@ -1,4 +1,4 @@
-const weatherDisplay = document.getElementById("weatherbox");
+const weatherDisplay = document.getElementById("weatherdisplay");
 
 //display location (string) as title:
 const cityAndCountry = document.createElement("div");
@@ -45,6 +45,8 @@ searchBtn.addEventListener("click", event => {
         const response = await fetch(apiURL);
         const weatherData = await response.json();
 
+        weatherDisplay.classList.add("weatherContainer")
+
         //logging to make sure that json is returned upon api call:
         console.log(weatherData);
 
@@ -66,11 +68,8 @@ searchBtn.addEventListener("click", event => {
         const tempCelsius = parseInt(weatherData.main.temp.toFixed(2));
         const tempFahrenheit = parseInt(((tempCelsius * 1.8) + 32).toFixed(2));
 
-        temperature1.innerText = `${tempCelsius} °c`;
+        temperature1.innerText = `${tempCelsius} °c ${tempFahrenheit} °f`;
         weatherDisplay.appendChild(temperature1);
-
-        temperature2.innerText = `${tempFahrenheit} °f`;
-        weatherDisplay.appendChild(temperature2);
 
         weatherMain.innerText = weatherData.weather[0].main;
         weatherDisplay.appendChild(weatherMain);
