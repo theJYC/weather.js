@@ -32,11 +32,12 @@
        url('fonts/lato-v17-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
 }
 
-
 #container {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    font-family: Inconsolata;
+
 }
 
 .locationTitle {
@@ -45,7 +46,12 @@
 }
 
 .temperature {
-    font-size: 13px;
+    font-size: 15px;
+    font-family: Lato;
+}
+
+.weather {
+    font-size: 20px;
     font-family: Lato;
 }
 
@@ -61,8 +67,12 @@ form {
 
 #searchText {
     width: 115px;
+    font-family: Inconsolata;
+
 }
 
 #search {
     width: 55px;
+    font-family: Inconsolata;
+
 }

@@ -1,16 +1,24 @@
 const weatherDisplay = document.getElementById("weatherbox");
 
-//div to display location (string) as title:
+//display location (string) as title:
 const cityAndCountry = document.createElement("div");
 cityAndCountry.classList.add("locationTitle");
 
-//div to display temp in celsius:
+//display temp in celsius:
 const temperature1 = document.createElement("div");
 temperature1.classList.add("temperature");
 
-//div to display temp in fahrenheit:
+//display temp in fahrenheit:
 const temperature2 = document.createElement("div");
 temperature2.classList.add("temperature");
+
+//display weather, main:
+const weatherMain = document.createElement("div");
+weatherMain.classList.add("weather");
+
+//display weather, description:
+const weatherDescription = document.createElement("div");
+weatherDescription.classList.add("weather");
 
 //img to display the weather icon
 const weatherImage = document.createElement("img")
@@ -64,6 +72,12 @@ searchBtn.addEventListener("click", event => {
         temperature2.innerText = `${tempFahrenheit} °f`;
         weatherDisplay.appendChild(temperature2);
 
+        weatherMain.innerText = weatherData.weather[0].main;
+        weatherDisplay.appendChild(weatherMain);
+
+        weatherDescription.innerText = weatherData.weather[0].description;
+        weatherDisplay.appendChild(weatherDescription);
     }
+
     getWeather();
-})
+});
