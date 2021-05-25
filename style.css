@@ -1,17 +1,68 @@
-body {
+/*selfhosting a couple of fonts a) b) */
+
+/*a) this is for the location title: */
+
+/* inconsolata-regular font */
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/inconsolata-v21-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/inconsolata-v21-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/inconsolata-v21-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/inconsolata-v21-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/inconsolata-v21-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/inconsolata-v21-latin-regular.svg#Inconsolata') format('svg'); /* Legacy iOS */
+}
+
+/*b) this is for the weather detail text: */
+
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/lato-v17-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/lato-v17-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/lato-v17-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/lato-v17-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/lato-v17-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/lato-v17-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
+}
+
+
+#container {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-.cityName {
+.locationTitle {
     font-size: 26px;
+    font-family: Inconsolata;
 }
 
 .temperature {
     font-size: 13px;
+    font-family: Lato;
 }
 
 #weatherbox {
-    margin-top: 50px
+    margin-top: 50px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#searchText {
+    width: 115px;
+}
+
+#search {
+    width: 55px;
 }
