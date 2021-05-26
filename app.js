@@ -8,26 +8,30 @@ cityAndCountry.classList.add("locationTitle");
 const temperature1 = document.createElement("div");
 temperature1.classList.add("temperature");
 
-//display temp in fahrenheit:
-const temperature2 = document.createElement("div");
-temperature2.classList.add("temperature");
-
 //display weather, main:
 const weatherMain = document.createElement("div");
 weatherMain.classList.add("weather");
 
-//display weather, description:
-const weatherDescription = document.createElement("div");
-weatherDescription.classList.add("weather");
-
 //img to display the weather icon
-const weatherImage = document.createElement("img")
+const weatherImage = document.createElement("img");
 
-//btn to submit the weather search based on user location input
-const searchBtn = document.getElementById("search");
+//to display the more granular data, below the current temp:
+const dashboard = document.createElement("div");
+dashboard.classList.add("dashboard")
+
+//leftColumn to contain feels_like, temp_min, temp_max:
+const leftColumn = document.createElement("div");
+leftColumn.classList.add("dashLeft");
+
+//rightColumn to contain humidity, sunrise, sunset:
+const rightColumn = document.createElement("div");
+rightColumn.classList.add("dashRight");
 
 //api key:
 let apiKey = "be2f9820c6286708f298276e996fa57d"
+
+//btn to submit the weather search based on user location input
+const searchBtn = document.getElementById("search");
 
 //eventlistener for when search is performed:
 searchBtn.addEventListener("click", event => {
@@ -54,6 +58,9 @@ searchBtn.addEventListener("click", event => {
         const city = weatherData.name;
         const country = weatherData.sys.country;
         cityAndCountry.innerText = `${city}, ${country}`;
+        if (cityAndCountry.innerText.length > 13) {
+            cityAndCountry.classList.add("locationTitleLong")
+        }
         weatherDisplay.appendChild(cityAndCountry);
 
         //then, display weather icon:
@@ -62,20 +69,28 @@ searchBtn.addEventListener("click", event => {
         weatherImage.src = `http://openweathermap.org/img/wn/${weatherId}@2x.png`;
         weatherDisplay.appendChild(weatherImage);
 
-        //then, two rows that display the temp, in 1) celsius, and 2) fahrenheit:
+        //then the accompanying weather text:
+        weatherMain.innerText = weatherData.weather[0].main.toLowerCase();
+        weatherDisplay.appendChild(weatherMain);
 
         //default measurements are in metric (units=metric) via api call:
         const tempCelsius = parseInt(weatherData.main.temp.toFixed(2));
         const tempFahrenheit = parseInt(((tempCelsius * 1.8) + 32).toFixed(2));
 
-        temperature1.innerText = `${tempCelsius} °c ${tempFahrenheit} °f`;
+        temperature1.innerText = `${tempCelsius}°c`;
         weatherDisplay.appendChild(temperature1);
 
-        weatherMain.innerText = weatherData.weather[0].main;
-        weatherDisplay.appendChild(weatherMain);
+        //grey dashboard which will display two flex columns for granular data:
+        weatherDisplay.appendChild(dashboard);
 
-        weatherDescription.innerText = weatherData.weather[0].description;
-        weatherDisplay.appendChild(weatherDescription);
+        //left column will have feels_like; temp_min; and temp_max:
+        leftColumn.innerText = `min:   16\n max:   23`
+        dashboard.appendChild(leftColumn);
+
+
+        //right column will have humidity, sunrise, sunset:
+        rightColumn.innerText = `humidity: 8% \n sunrise: 06:00am \n sunset: 8:30pm`
+        dashboard.appendChild(rightColumn);
     }
 
     getWeather();

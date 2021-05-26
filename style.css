@@ -31,12 +31,18 @@ header {
 }
 
 .locationTitle {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.locationTitleLong {
+    font-size: 2rem;
     margin-top: 1.5rem;
 }
 
 .temperature {
-    font-size: 15px;
+    margin-top: 1.5rem;
+    font-size: 4.5rem;
 }
 
 .weather {
@@ -47,7 +53,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40rem;
+    width: 20rem;
     height: 425.5px;
     background-color: #e6e7eb;
     border-radius: 0.75rem;
@@ -59,7 +65,33 @@ header {
     margin-bottom: 15px;
 }
 
+/*to contain [left column] | [right column] */
+.dashboard {
+    background-color: #cfcfcf;
+    width: 20rem;
+    height: 134.5px;
+    border-radius: 0 0 0.75rem 0.75rem;
+    border-top: solid #827f7f;
+    display: flex;
+}
+
+.dashLeft {
+    display: flex;
+    flex-direction: row;
+    width: 9rem;
+    border-right: solid #827f7f;
+    font-size: 30px;
+}
+
+.dashRight {
+    display: flex;
+    flex-direction: row;
+    width: 14rem;
+    font-size: 22px;
+}
+
 img {
+    margin-top: 1.25rem;
     height: 70px;
     width: 70px;
 }
