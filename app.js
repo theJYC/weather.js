@@ -56,11 +56,8 @@ searchBtn.addEventListener("click", event => {
 
         //first, display the location as title:
         const city = weatherData.name;
-        const country = weatherData.sys.country;
-        cityAndCountry.innerText = `${city}, ${country}`;
-        if (cityAndCountry.innerText.length > 13) {
-            cityAndCountry.classList.add("locationTitleLong")
-        }
+        const country = weatherData.sys.country; //country info not displayed for responsiveness
+        cityAndCountry.innerText = `${city}`;
         weatherDisplay.appendChild(cityAndCountry);
 
         //then, display weather icon:
@@ -95,3 +92,6 @@ searchBtn.addEventListener("click", event => {
 
     getWeather();
 });
+
+325143175386
+121000358

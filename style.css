@@ -28,14 +28,10 @@ header {
     padding-top: .14rem;
     outline: none;
     margin-right: 0.25rem;
+    cursor: pointer;
 }
 
 .locationTitle {
-    font-size: 2.5rem;
-    margin-top: 1.5rem;
-}
-
-.locationTitleLong {
     font-size: 2.25rem;
     margin-top: 1.5rem;
 }
@@ -43,6 +39,7 @@ header {
 .temperature {
     margin-top: 1.5rem;
     font-size: 4.5rem;
+    margin-bottom: 15px;
 }
 
 .weather {
@@ -61,7 +58,7 @@ header {
     box-shadow: 0 0 15px 4px rgb(0 0 0 / 15%);
     margin-left: 12px;
     margin-right: 12px;
-    margin-top: 15px;
+    margin-top: 55px;
     margin-bottom: 15px;
 }
 
@@ -69,7 +66,7 @@ header {
 .dashboard {
     background-color: #cfcfcf;
     width: 20rem;
-    height: 141px;
+    height: 111px;
     border-radius: 0 0 0.75rem 0.75rem;
     border-top: solid #827f7f;
     display: flex;
@@ -79,8 +76,9 @@ header {
     display: flex;
     flex-direction: row;
     width: 9rem;
-    border-right: solid #827f7f;
     font-size: 30px;
+    margin-left: 11.5px;
+    margin-top: 22px;
 }
 
 .dashRight {
@@ -88,24 +86,32 @@ header {
     flex-direction: row;
     width: 14rem;
     font-size: 22px;
+    margin-left: 12px;
+    margin-top: 16.5px;
+    margin-bottom: 18px;
+    border-left: solid #827f7f;
+    padding-left: 7px;
 }
 
 img {
-    margin-top: 1.25rem;
-    height: 70px;
-    width: 70px;
+    margin-top: 0.05rem;
+    height: 100px;
+    width: 100px;
 }
 
 #searchText {
     font-size: 1.5rem;
     width: 160px;
     outline: none;
+    border: 2.5px solid #827f7f;
+    border-radius: 5px;
+    color: #575555;
 }
 
 #search {
     width: 40px;
     background-color: #d3d6e3;
-    border: 1.5px solid #4f4f4f;
+    border: 2.5px solid #827f7f;
     border-radius: 0.35rem;
     font-weight: normal;
     color: #575555;
@@ -113,6 +119,7 @@ img {
     padding-top: .14rem;
     padding-bottom: .1rem;
     outline: none;
+    cursor: pointer;
 }
 
 #search:hover {
