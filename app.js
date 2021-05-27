@@ -1,3 +1,4 @@
+
 const weatherDisplay = document.getElementById("weatherdisplay");
 
 //display location (string) as title:
@@ -32,6 +33,29 @@ let apiKey = "be2f9820c6286708f298276e996fa57d"
 
 //btn to submit the weather search based on user location input
 const searchBtn = document.getElementById("search");
+
+//function to convert a unix timestamp to xx:xxam/pm:
+const unixToReadable = timestamp => {
+    let date = new Date(timestamp);
+
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let amPm = "";
+
+    if (hours < 12) {
+        amPm = "am";
+    }
+    else {
+        amPm = "pm";
+        hours - 12;
+    }
+
+    if (minutes < 10) {
+        minutes = `0${minutes.toString()}`;
+    }
+
+    return `${hours}:${minutes}${amPm}`;
+}
 
 //eventlistener for when search is performed:
 searchBtn.addEventListener("click", event => {
@@ -71,27 +95,32 @@ searchBtn.addEventListener("click", event => {
         weatherDisplay.appendChild(weatherMain);
 
         //default measurements are in metric (units=metric) via api call:
-        const tempCelsius = parseInt(weatherData.main.temp.toFixed(2));
-        const tempFahrenheit = parseInt(((tempCelsius * 1.8) + 32).toFixed(2));
+        const tempCelsius = parseInt(weatherData.main.temp.toFixed(0));
+        const tempFahrenheit = parseInt(((tempCelsius * 1.8) + 32).toFixed(0));
 
-        temperature1.innerText = `${tempCelsius}°c`;
+        temperature1.innerText = `${tempCelsius}°`;
         weatherDisplay.appendChild(temperature1);
 
         //grey dashboard which will display two flex columns for granular data:
         weatherDisplay.appendChild(dashboard);
 
         //left column will have feels_like; temp_min; and temp_max:
-        leftColumn.innerText = `min:   16\n max:   23`
+        const tempMin = weatherData.main.temp_min.toFixed(0);
+        const tempMax = weatherData.main.temp_max.toFixed(0);
+        leftColumn.innerText = `low: \u00A0\u00A0${tempMin}°\n high: \u00A0${tempMax}°`
         dashboard.appendChild(leftColumn);
 
 
         //right column will have humidity, sunrise, sunset:
-        rightColumn.innerText = `humidity: 8% \n sunrise: 06:00am \n sunset: 8:30pm`
+        const humidity = weatherData.main.humidity;
+        console.log(humidity);
+
+        const sunrise = unixToReadable(weatherData.sys.sunrise);
+        const sunset = unixToReadable(weatherData.sys.sunset);
+
+        rightColumn.innerText = `humidity: \u00A0\u00A0${humidity}% \n sunrise:\u00A0${sunrise}\n sunset:\u00A0\u00A0${sunset}`
         dashboard.appendChild(rightColumn);
     }
 
     getWeather();
 });
-
-325143175386
-121000358
