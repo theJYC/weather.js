@@ -35,8 +35,9 @@ let apiKey = "be2f9820c6286708f298276e996fa57d"
 const searchBtn = document.getElementById("search");
 
 //function to convert a unix timestamp to xx:xxam/pm:
-const unixToReadable = timestamp => {
-    let date = new Date(timestamp);
+const unixToReadable = (timestamp) => {
+    let date = new Date(timestamp * 1000);
+    console.log(date);
 
     let hours = date.getHours();
     let minutes = date.getMinutes();
@@ -48,6 +49,10 @@ const unixToReadable = timestamp => {
     else {
         amPm = "pm";
         hours - 12;
+    }
+
+    if (hours < 10) {
+        hours = `0${hours.toString()}`;
     }
 
     if (minutes < 10) {

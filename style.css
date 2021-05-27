@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 3rem;
+    margin-top: 3rem;
     font-family: Arial;
 }
 
@@ -40,7 +40,7 @@ header {
     margin-top: 1.5rem;
     font-size: 4.5rem;
     margin-bottom: 15px;
-    margin-left: 28px;
+    margin-left: 24px;
 }
 
 .weather {
@@ -67,7 +67,7 @@ header {
 .dashboard {
     background-color: #cfcfcf;
     width: 20rem;
-    height: 111px;
+    height: 6.985rem;
     border-radius: 0 0 0.75rem 0.75rem;
     border-top: solid #827f7f;
     display: flex;
@@ -89,7 +89,7 @@ header {
     font-size: 20px;
     margin-left: 11px;
     margin-top: 16.5px;
-    margin-bottom: 18px;
+    margin-bottom: 23px;
     border-left: solid #827f7f;
     padding-left: 7px;
     margin-right: 1px;
