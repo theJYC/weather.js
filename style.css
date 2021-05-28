@@ -22,12 +22,24 @@ header {
     justify-content: center;
 }
 
-#pin {
+#units {
     font-weight: normal;
     font-size: 1.5rem;
     padding-top: .14rem;
     outline: none;
     margin-right: 0.25rem;
+    cursor: pointer;
+
+    width: 40px;
+    background-color: #d3d6e3;
+    border: 2.5px solid #827f7f;
+    border-radius: 0.35rem;
+    font-weight: normal;
+    color: #575555;
+    font-size: 1.3rem;
+    padding-top: .14rem;
+    padding-bottom: .1rem;
+    outline: none;
     cursor: pointer;
 }
 

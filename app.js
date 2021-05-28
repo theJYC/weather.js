@@ -28,6 +28,13 @@ leftColumn.classList.add("dashLeft");
 const rightColumn = document.createElement("div");
 rightColumn.classList.add("dashRight");
 
+//container div that holds the weatherCard and unit conversion line:
+const container = document.getElementById("container");
+
+//units container to hold [ °C / °F ]:
+const unitsContainer = document.createElement("div");
+unitsContainer.classList.add("units");
+
 //api key:
 let apiKey = "be2f9820c6286708f298276e996fa57d"
 
@@ -92,7 +99,7 @@ searchBtn.addEventListener("click", event => {
         //then, display weather icon:
         const weatherId = weatherData.weather[0].icon;
 
-        weatherImage.src = `http://openweathermap.org/img/wn/${weatherId}@2x.png`;
+        weatherImage.src = `https://openweathermap.org/img/wn/${weatherId}@2x.png`;
         weatherDisplay.appendChild(weatherImage);
 
         //then the accompanying weather text:
